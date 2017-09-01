@@ -318,7 +318,7 @@ function configureNginx() {
         return
     fi
 
-    service nginx restart
+    systemctl restart nginx
 }
 
 function updateLogOwner() {
