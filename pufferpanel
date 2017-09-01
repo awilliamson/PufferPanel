@@ -297,22 +297,22 @@ function configureNginx() {
     "
 
     if [ -d "/etc/nginx/sites-enabled" ]; then
-        if [ -f "/etc/nginx/sites-enabled/pufferpanel.conf" ]; then
+        if [ -f "/etc/nginx/sites-enabled/pp.inp.io" ]; then
             echo "An existing configuration exists in /etc/nginx/sites-enabled"
             return
         fi
-        if [ -f "/etc/nginx/sites-available/pufferpanel.conf" ]; then
+        if [ -f "/etc/nginx/sites-available/pp.inp.io" ]; then
             echo "An existing configuration exists in /etc/nginx/sites-available"
             return
         fi
-        echo "${conf}" > /etc/nginx/sites-available/pufferpanel.conf
-        ln -s /etc/nginx/sites-available/pufferpanel.conf /etc/nginx/sites-enabled/pufferpanel.conf
+        echo "${conf}" > /etc/nginx/sites-available/pp.inp.io
+        ln -s /etc/nginx/sites-available/pp.inp.io /etc/nginx/sites-enabled/pp.inp.io
     elif [ -d "/etc/nginx/conf.d/" ]; then
-        if [ -f "/etc/nginx/conf.d/pufferpanel.conf" ]; then
+        if [ -f "/etc/nginx/conf.d/pp.inp.io" ]; then
             echo "An existing configuration exists in /etc/nginx/conf.d"
             return
         fi
-        echo "${conf}" > /etc/nginx/conf.d/pufferpanel.conf
+        echo "${conf}" > /etc/nginx/conf.d/pp.inp.io
     else
         echo "Could not determine where to install the config"
         return
